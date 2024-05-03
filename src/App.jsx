@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import './App.css'
-import Auth from './Auth'
-import Signup from './Signup'
-import DashBoard from './DashBoard'
+import Auth from './auth/Auth'
+import Signup from './assets/Signup'
+import Dashboard from './components/Dashboard'
+import Class from './Class'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     
-      <div id='app' className='light w-full h-full selection:bg-accent selection:text-white'>
+      <div id='app' className='w-full h-full light selection:bg-accent selection:text-white'>
         {/* <Auth /> */}
         {/* <Signup /> */}
-        <DashBoard />
+        {/* <Dashboard /> */}
+        <Class />
       </div>
     
   )
