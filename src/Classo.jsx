@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { BiEdit } from 'react-icons/bi';
 import EditWork from './components/EditWork';
+import AddWork from './components/AddWork';
 
 export default function Class() {
     const [edit, setEdit] = useState(false);
+    const [add, setAdd] = useState(false);
     const classo = {
         name: 'B.Tech CSE',
         teacher: 'Navneet Kaur',
@@ -16,21 +18,11 @@ export default function Class() {
                 subject: "math",
                 title: "chapter 2"
             }
-        ],
-        assignment: [
-            {
-                subject: "math",
-                title: "classwork questions"
-            },
-            {
-                subject: "math",
-                title: "classwork questions"
-            }
         ]
     };
 
     return (
-        <div className="w-full h-[90%] p-10 bg-blue-100">
+        <div className="w-full h-[90%] p-10 bg-blue-100 flex flex-col">
             <h1 className="text-xl font-bold text-blue-900">{classo.name}</h1>
             <div id="homework" className="mt-6">
                 <div className='flex flex-row justify-between'>
@@ -54,8 +46,9 @@ export default function Class() {
                     </tbody>
                 </table>
             </div>
+            <button onClick={() => setAdd(true)} className='w-48 h-10 bg-blue-400 rounded-full'>Add Homework</button>
 
-            <div id="assignment" className="mt-6">
+            {/* <div id="assignment" className="mt-6">
                 <div className='flex flex-row justify-between'>
                     <h2 className="text-lg font-semibold text-blue-900">Today's Assignments</h2>
                     <button onClick={() => setEdit(true)}>{<BiEdit />}</button>
@@ -76,8 +69,9 @@ export default function Class() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </div> */}
             {edit && <EditWork edit={edit} setEdit={setEdit} homeworks={classo.homework} />}
+            {add && <AddWork setAdd={setAdd} />}
         </div>
     );
 }
