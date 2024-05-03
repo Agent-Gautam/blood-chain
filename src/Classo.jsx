@@ -7,10 +7,16 @@ export default function Class() {
     const classo = {
         name: 'B.Tech CSE',
         teacher: 'Navneet Kaur',
-        homework: {
-            'science': "hello ",
-            'math': "cha 1"
-        },
+        homework: [
+            {
+                subject: "science",
+                title: "chapter 1"
+            },
+            {
+                subject: "math",
+                title: "chapter 2"
+            }
+        ],
         assignment: [
             {
                 subject: "math",
@@ -39,17 +45,21 @@ export default function Class() {
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.entries(classo.homework).map(([subject, homework], index) => (
+                        {classo.homework.map((item, index) => (
                             <tr key={index} className="border-b border-blue-300">
-                                <td className="px-4 py-2">{subject}</td>
-                                <td className="px-4 py-2">{homework}</td>
+                                <td className="px-4 py-2">{item.subject}</td>
+                                <td className="px-4 py-2">{item.title}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-            <div id="assignments" className="mt-6">
-                <h2 className="text-lg font-semibold text-blue-900">Assignments</h2>
+
+            <div id="assignment" className="mt-6">
+                <div className='flex flex-row justify-between'>
+                    <h2 className="text-lg font-semibold text-blue-900">Today's Assignments</h2>
+                    <button onClick={() => setEdit(true)}>{<BiEdit />}</button>
+                </div>
                 <table className="w-full mt-4">
                     <thead>
                         <tr className="bg-blue-200">
@@ -58,10 +68,10 @@ export default function Class() {
                         </tr>
                     </thead>
                     <tbody>
-                        {classo.assignment.map((assignment, index) => (
+                        {classo.assignment.map((item, index) => (
                             <tr key={index} className="border-b border-blue-300">
-                                <td className="px-4 py-2">{assignment.subject}</td>
-                                <td className="px-4 py-2">{assignment.title}</td>
+                                <td className="px-4 py-2">{item.subject}</td>
+                                <td className="px-4 py-2">{item.title}</td>
                             </tr>
                         ))}
                     </tbody>
