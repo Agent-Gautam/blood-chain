@@ -22,9 +22,10 @@ html, body, #root {
 }
 
 .light {
-  --background: #FEDCDC;
+  --background1: #98B9AB;
+  --background: #7d71f1;
   --text1 : white;
   --text2: black;
-  --accent: #FF5E5E;
-  --button: #FE6161;
+  --accent: #0237a8;
+  --button: #497ef1;
 }

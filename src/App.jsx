@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import Auth from "./auth/Auth";
-import Signup from "./assets/Signup";
+import Auth from "./auth/roles";
+import Signup from "./auth/Signup";
 import Dashboard from "./components/Dashboard";
 import Classo from "./Classo";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
     //   {/* <Auth /> */}
     //   {/* <Signup /> */}
     //   {/* <Dashboard /> */}
-    //   <Classo />
+    //   {/* <Classo /> */}
     // </div>
     <BrowserRouter>
       <header className="h-12">
