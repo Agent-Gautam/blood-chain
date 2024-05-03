@@ -29,8 +29,8 @@ export default function Dashboard({}) {
         }
     ]
     return (
-        <div className="w-full h-full flex flex-col sm:flex-row flex-wrap p-10 gap-10 sm:justify-center" >
-            {classes.map(c => <ClassElement data={c} />)}
+        <div className="w-full h-[90%] flex flex-col sm:flex-row flex-wrap p-10 gap-10 sm:justify-center" >
+            {classes.map((c, id) => <ClassElement data={c} key={id} />)}
         </div>
     )
 }

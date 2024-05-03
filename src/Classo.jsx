@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BiEdit } from 'react-icons/bi';
+import EditWork from './components/EditWork';
 
 export default function Class() {
+    const [edit, setEdit] = useState(false);
     const classo = {
         name: 'B.Tech CSE',
         teacher: 'Navneet Kaur',
@@ -21,10 +24,13 @@ export default function Class() {
     };
 
     return (
-        <div className="w-full h-full p-10 bg-blue-100">
+        <div className="w-full h-[90%] p-10 bg-blue-100">
             <h1 className="text-xl font-bold text-blue-900">{classo.name}</h1>
             <div id="homework" className="mt-6">
-                <h2 className="text-lg font-semibold text-blue-900">Today's Homework</h2>
+                <div className='flex flex-row justify-between'>
+                    <h2 className="text-lg font-semibold text-blue-900">Today's Homework</h2>
+                    <button onClick={() => setEdit(true)}>{<BiEdit />}</button>
+                </div>
                 <table className="w-full mt-4">
                     <thead>
                         <tr className="bg-blue-200">
@@ -61,6 +67,7 @@ export default function Class() {
                     </tbody>
                 </table>
             </div>
+            {edit && <EditWork edit={edit} setEdit={setEdit} homeworks={classo.homework} />}
         </div>
     );
 }
