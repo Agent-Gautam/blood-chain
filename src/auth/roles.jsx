@@ -40,6 +40,7 @@
 // }
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Auth() {
     const [userType, setUserType] = useState("");
@@ -58,24 +59,28 @@ export default function Auth() {
                     <p className='text-blue-500 text-lg font-semibold'>Please select your role</p>
                 </div>
                 <div id="auth-buttons" className='flex flex-col gap-4 items-center'>
-                    <button 
-                        id="parent" 
-                        className={`bg-blue-500 w-full h-12 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
-                            selected === 'parent' && 'bg-blue-600'
-                        }`}
-                        onClick={() => handleSelect('parent')}
-                    >
-                        {selected === 'parent' ? '✔ Parent' : 'Parent'}
-                    </button>
-                    <button 
-                        id="teacher" 
-                        className={`bg-blue-500 w-full h-12 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
-                            selected === 'teacher' && 'bg-blue-600'
-                        }`}
-                        onClick={() => handleSelect('teacher')}
-                    >
-                        {selected === 'teacher' ? '✔ Teacher' : 'Teacher'}
-                    </button>
+                    <Link to={"/parents/login"} >
+                        <button 
+                            id="parent" 
+                            className={`bg-blue-500 w-full h-12 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
+                                selected === 'parent' && 'bg-blue-600'
+                            }`}
+                            onClick={() => handleSelect('parent')}
+                        >
+                            {selected === 'parent' ? '✔ Parent' : 'Parent'}
+                        </button>
+                    </Link>
+                    <Link to={"/teachers/login"} >
+                        <button 
+                            id="teacher" 
+                            className={`bg-blue-500 w-full h-12 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
+                                selected === 'teacher' && 'bg-blue-600'
+                            }`}
+                            onClick={() => handleSelect('teacher')}
+                        >
+                            {selected === 'teacher' ? '✔ Teacher' : 'Teacher'}
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
