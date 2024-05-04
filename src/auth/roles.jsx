@@ -55,12 +55,12 @@ export default function Auth() {
                     <h1 className='text-gray-800 text-3xl font-bold mb-2'>Welcome to our Educational Platform!</h1>
                     <p className='text-blue-500 text-lg font-semibold'>Please select your role</p>
                 </div>
-                <div className='flex flex-col gap-4 items-center'>
+                <div className='w-full flex-col gap-4 items-center'>
                     <Link to={"/parents/login"} >
                         <button 
-                            className={`bg-blue-500 w-full h-[70px] rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
+                            className={`bg-blue-500 w-full h-[50px] my-2 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
                                 selected === 'parent' && 'bg-blue-600'
-                            }`}
+                            } hover:bg-blue-700`}
                             onClick={() => handleSelect('parent')}
                         >
                             {selected === 'parent' ? '✔ Parent' : 'Parent'}
@@ -68,9 +68,9 @@ export default function Auth() {
                     </Link>
                     <Link to={"/teachers/login"} >
                         <button 
-                            className={`bg-blue-500 w-full h-[70px] rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
+                            className={`bg-blue-500 w-full h-[50px] rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
                                 selected === 'teacher' && 'bg-blue-600'
-                            }`}
+                            } hover:bg-blue-700`}
                             onClick={() => handleSelect('teacher')}
                         >
                             {selected === 'teacher' ? '✔ Teacher' : 'Teacher'}
