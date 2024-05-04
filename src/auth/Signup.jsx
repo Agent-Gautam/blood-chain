@@ -27,25 +27,31 @@
 //         </div>
 //     )
 // }
-
-import { BsGoogle } from "react-icons/bs";
-
-// import React from 'react';
+import React from 'react';
 
 export default function Signup() {
     return (
-        <div id="signup" className="w-full h-full bg-gray-100 flex items-center justify-center">
-            <button className="absolute top-5 left-5 bg-gray-200 px-4 py-2 rounded-md">Back</button>
-            <div id="signupform" className="w-[400px] bg-white rounded-xl shadow-md p-10 flex flex-col items-center gap-6">
+        <div className="flex justify-center items-center w-full h-screen bg-gradient-to-br from-blue-300 to-green-400">
+            <div className="bg-white bg-opacity-90 w-96 rounded-xl shadow-md p-10 flex flex-col items-center gap-6">
                 <h1 className="text-3xl font-bold">Sign Up</h1>
-                <p className="text-gray-600">Join our educational platform by signing up</p>
-                    <button className="flex items-center justify-center gap-4 w-full h-12 bg-cyan-600 text-white rounded-lg shadow-md hover:bg-cyan-700 focus:outline-none">
-                       <BsGoogle /> Google
+                <p className="text-gray-700">Join our educational platform by signing up</p>
+                <form className="w-full flex flex-col gap-4">
+                    <div className="w-full flex flex-col gap-2">
+                        <label htmlFor="email" className="text-gray-800">Email Address</label>
+                        <input type="email" id="email" name="email" className="w-full h-10 px-4 rounded-md shadow-md border border-gray-300 focus:outline-none focus:border-blue-400" placeholder="Enter your email address" />
+                    </div>
+                    <div className="w-full flex flex-col gap-2">
+                        <label htmlFor="password" className="text-gray-800">Password</label>
+                        <input type="password" id="password" name="password" className="w-full h-10 px-4 rounded-md shadow-md border border-gray-300 focus:outline-none focus:border-blue-400" placeholder="Enter your password" />
+                    </div>
+                    <button type="submit" className="w-full h-12 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none">
+                        Sign Up
                     </button>
+                </form>
             </div>
-            <div id="image" className="absolute bottom-0 right-0 lg:block">
+            <div className="absolute bottom-0 right-0 hidden lg:block">
                 <img src="./assets/checkup.jpg" alt="checkup image" />
             </div>
         </div>
-    )
+    );
 }

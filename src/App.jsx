@@ -13,14 +13,13 @@ function App() {
   return (
     // <div id='app' className='w-full h-full light selection:bg-accent selection:text-white'>
     //   {/* <Auth /> */}
-    //   {/* <Signup /> */}
+    //   <Signup  />
     //   {/* <Dashboard /> */}
     //   {/* <Classo /> */}
     // </div>
     <BrowserRouter>
       <header className="h-12">
         <Link to="/">
-          Home
         </Link>
         <nav>
           {/* <Link to="/about">About</Link> */}
