@@ -1,19 +1,28 @@
 import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { parentCol, teacherCol, base } from "../context/firebase";
-import { doc } from "firebase/firestore";
+import { getDocs } from "firebase/firestore";
 
 export default function Login() {
   const { type } = useParams();
   const [user, setUser] = useState({ id: "", password: "" });
+  const [loggedIn, setLoggedIn] = useState(false);
 
   async function checkUser() {
-    <Navigate to={`/${type}/dashboard`} />
+    const querySnapshot = await getDocs(parentCol);
+    querySnapshot.docs.forEach((doc) => {
+        if(doc.id === user.id) setLoggedIn(true);
+    ;
+  });
   }
 
   function handleChange(e) {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
+  }
+
+  if(loggedIn) {
+    return <Navigate to={`/${type}/${user.id}/dashboard`} />;
   }
 
   return (

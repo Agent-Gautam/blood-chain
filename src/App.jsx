@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Auth from "./auth/Roles";
 import Signup from "./auth/Signup";
 import Dashboard from "./components/Dashboard";
 import Classo from "./Classo";
@@ -30,7 +29,7 @@ function App() {
         <Route path="/" element={<Roles />} />
         <Route path="/:type/login" element={<Login />} />
         <Route path="/:type/signup" element={<Signup />} />
-        <Route path="/:id/dashboard" element={<Dashboard />} />
+        <Route path="/:type/:id/dashboard" element={<Dashboard />} />
         <Route path="/class:id" element={<Classo />} />
       </Routes>
     </BrowserRouter>
