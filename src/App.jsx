@@ -30,7 +30,7 @@ function App() {
         <Route path="/:type/login" element={<Login />} />
         <Route path="/:type/signup" element={<Signup />} />
         <Route path="/:type/:id/dashboard" element={<Dashboard />} />
-        <Route path="/class:id" element={<Classo />} />
+        <Route path="/:type/:id/:classid" element={<Classo />} />
       </Routes>
     </BrowserRouter>
   );
