@@ -42,26 +42,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Auth() {
-    const [userType, setUserType] = useState("");
     const [selected, setSelected] = useState(null);
 
     const handleSelect = (type) => {
-        setUserType(type);
         setSelected(type);
     };
 
     return (
-        <div id="auth" className="flex justify-center items-center w-full h-screen bg-gray-100">
-            <div id="centerpane" className="w-96 h-auto flex flex-col bg-white p-8 rounded-lg shadow-md">
-                <div id='heading' className='flex flex-col items-center mb-6'>
+        <div className="flex justify-center items-center w-full h-screen bg-gradient-to-b from-white to-sky-200">
+            <div className="w-96 bg-white p-8 rounded-lg shadow-md">
+                <div className='flex flex-col items-center mb-6'>
                     <h1 className='text-gray-800 text-3xl font-bold mb-2'>Welcome to our Educational Platform!</h1>
                     <p className='text-blue-500 text-lg font-semibold'>Please select your role</p>
                 </div>
-                <div id="auth-buttons" className='flex flex-col gap-4 items-center'>
+                <div className='flex flex-col gap-4 items-center'>
                     <Link to={"/parents/login"} >
                         <button 
-                            id="parent" 
-                            className={`bg-blue-500 w-full h-12 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
+                            className={`bg-blue-500 w-full h-[70px] rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
                                 selected === 'parent' && 'bg-blue-600'
                             }`}
                             onClick={() => handleSelect('parent')}
@@ -71,8 +68,7 @@ export default function Auth() {
                     </Link>
                     <Link to={"/teachers/login"} >
                         <button 
-                            id="teacher" 
-                            className={`bg-blue-500 w-full h-12 rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
+                            className={`bg-blue-500 w-full h-[70px] rounded-lg text-white font-semibold transition duration-300 ease-in-out ${
                                 selected === 'teacher' && 'bg-blue-600'
                             }`}
                             onClick={() => handleSelect('teacher')}
