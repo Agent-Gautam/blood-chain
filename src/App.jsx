@@ -14,7 +14,7 @@ function App() {
   return (
     // <div id='app' className='w-full h-full light selection:bg-accent selection:text-white'>
     //   {/* <Auth /> */}
-    //   {/* <Signup /> */}
+    //   <Signup  />
     //   {/* <Dashboard /> */}
     //   {/* <Classo /> */}
     // </div>
