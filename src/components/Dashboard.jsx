@@ -1,7 +1,17 @@
+import { useParams } from "react-router-dom"
 import ClassElement from "./ClassElement"
-
+import { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { base } from "../context/firebase";
 
 export default function Dashboard({}) {
+    const {type, id} = useParams();
+    const [classData, setClassData] = useState([]);
+    useEffect(async () => {
+        const ref = doc(base, type, id);
+        const UserData = await getDoc(ref);
+        console.log(UserData.data());
+    },[])
     let classes = [
         {
             name: 'B.Tech CSE',
